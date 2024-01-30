@@ -18,17 +18,7 @@ if N < 4:
 
 
 def board_column_gen(board=[]):
-    """Adds a column of zeroes to the right of any board about to be tested for
-    queen arrangements in that column.
 
-    Args:
-        board (list) of (list) of (int): 2D list of ints, only as wide as
-        needed to test the rightmost column for queen conflicts.
-
-    Returns:
-        modified 2D list
-
-    """
     if len(board):
         for row in board:
             row.append(0)
@@ -39,34 +29,14 @@ def board_column_gen(board=[]):
 
 
 def add_queen(board, row, col):
-    """Sets "queen," or 1, to coordinates given in board.
-
-    Args:
-        board (list) of (list) of (int): 2D list of ints, only as wide as
-            needed to test the rightmost column for queen conflicts.
-        row (int): first dimension index
-        col (int): second dimension index
-
-    """
+   
     board[row][col] = 1
 
 
 def new_queen_safe(board, row, col):
-    """For the board given, checks that for a new queen placed in the rightmost
-    column, there are no other "queen"s, or 1 values, in the martix to the
-    left, and diagonally up-left and down-left.
+    
 
-    Args:
-        board (list) of (list) of (int): 2D list of ints, only as wide as
-            needed to test the rightmost column for queen conflicts.
-        row (int): first dimension index
-        col (int): second dimension index
-
-    Returns:
-        True if no left side conflicts found for new queen, or False if a
-    conflict is found.
-
-    """
+  
     x = row
     y = col
 
@@ -87,21 +57,7 @@ def new_queen_safe(board, row, col):
 
 
 def coordinate_format(candidates):
-    """Converts a board (matrix of 1 and 0) into a series of row/column
-    indicies of each queen/1.
-
-    Args:
-    candidates (list) of (list) of (list) of (int): list of all successful
-        solutions for amount of columns last checked
-
-    Attributes:
-        holberton (list) of (list) of (int): each member list contains the row
-    column number for each queen found
-
-    Returns:
-        holberton, the list of coordinates
-
-    """
+ 
     holberton = []
     for x, attempt in enumerate(candidates):
         holberton.append([])
